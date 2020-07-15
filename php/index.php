@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php echo 1; ?>
-</body>
-</html>
+<?php 
+
+$host = 'mysql';  //the name of the mysql service inside the docker file.
+$user = 'devuser';
+$password = 'devpass';
+$db = 'db_name';
+$conn = new mysqli($host,$user,$password,$db);
+
+if($conn->connect_error){
+    echo 'connection failed'. $conn->connect_error;
+}
+echo 'successfully connected to MYSQL';
+
+
+ ?>
